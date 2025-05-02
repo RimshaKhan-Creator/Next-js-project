@@ -1,7 +1,6 @@
 // app/page.tsx
 import { prisma } from './lib/prisma';
 import Link from 'next/link';
-import {deleteSnippet} from '@/app/actions/index'
 import DeleteButton from "@/app/components/ui/delete";
 
 export default async function HomePage() {

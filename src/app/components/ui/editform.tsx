@@ -4,7 +4,7 @@ import { useState } from "react";
 import Editor from "@monaco-editor/react";
 import { saveSnippet } from "@/app/actions/index";
 import type { Snippet } from "@prisma/client";
-import { log } from "console";
+
 
 export default function EditForm({ snippet }: { snippet: Snippet }) {
   console.log(snippet,"snippet")

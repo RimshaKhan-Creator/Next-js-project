@@ -1,18 +1,18 @@
-// app/snippets/[id]/edit/page.tsx
 import { prisma } from "@/app/lib/prisma";
-import EditForm from "@/app/components/ui/editform"; 
+import EditForm from "@/app/components/ui/editform";
 
 interface Props {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>; // `params` is now a Promise of an object
 }
 
 export default async function EditSnippetPage({ params }: Props) {
+  // Await the `params` to resolve the Promise and get the actual object
+  const resolvedParams = await params;
+
+  // Convert `id` from string to number
   const snippet = await prisma.snippet.findUnique({
     where: {
-    
-    id: Number(params.id)
+      id: Number(resolvedParams.id), // Convert the string `id` to a number for Prisma
     },
   });
 
@@ -21,4 +21,12 @@ export default async function EditSnippetPage({ params }: Props) {
   }
 
   return <EditForm snippet={snippet} />;
+}
+// y generate static params hai jo ky dynamic ko static params m convert kry ga es sy optimization best ho gi or speed bh fast ho g
+export const generateStaticParams = async () => {
+  const snippets = await prisma.snippet.findMany();
+
+  return snippets.map((snippet)=> {
+    return {id:snippet.id.toString()}
+  })
 }

@@ -11,6 +11,7 @@ export default function DeleteButton({ id }: { id: number }) {
   const handleDelete = () => {
     startTransition(() => {
       deleteSnippet(id);
+    
     });
   };
 
