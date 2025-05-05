@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -38,3 +39,6 @@ use for next auth with prisma db
 next auth library use and connect prisma db through prisma adapter 
 example next auth ko ksi bh db k sath as a library hm use kr skty ha os ka apna koi connect ho ga or prisma adapter to mysql ,sql lite ,my sql,postgree, thats all 
 npm install next-auth@beta @auth/core @auth/prisma-adapter
+=======
+# Next-js-project
+>>>>>>> 2da0c259e43ba3c08f84c3109f1de19c2c2a435a
