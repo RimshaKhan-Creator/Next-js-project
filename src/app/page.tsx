@@ -4,13 +4,17 @@ import React from 'react';
 import { signIn } from '@/app/actions/sign-in';
 import { signOut } from './actions/sign-out';
 import { auth } from './auth';
+import Topheader from './ui/Topheader';
+import TopicCreateForm from './Posts/TopicCreateForm';
 
 const Page = async () => {
   const session = await auth();
   console.log("session",session)
 
   return (
-    <div>
+    <>
+   
+    {/* <div>
       <form action={signIn}>
         <button type="submit">Sign In</button>
       </form>
@@ -25,7 +29,13 @@ const Page = async () => {
           <pre>{JSON.stringify(session.user, null, 2)}</pre>
         </div>
       )}
+     
+    </div> */}
+    <div>
+ <Topheader/>
+ <TopicCreateForm/>
     </div>
+    </>
   );
 };
 
